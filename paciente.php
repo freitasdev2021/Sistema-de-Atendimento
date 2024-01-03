@@ -3,6 +3,9 @@ include"Configs/Includes/header.php";
 ?>
 <div class="formPacientes">
     <form id="formPacientes">
+        <div class="headerPaciente">
+            <a href="index.php" class="btn-voltar">Voltar</a>
+        </div>
         <!--DADOS DO PACIENTE-->
         <div class="dadosPaciente">
             <span>
@@ -55,6 +58,9 @@ include"Configs/Includes/header.php";
                 <label for="horaSolicitacao">Hora*</label>
                 <input type="time" name="horaSolicitacao" id="horaSolicitacao">
             </span>
+        </div>
+        <div class="footerPaciente">
+            <button class="btn-salvar">Salvar</button>
         </div>
     </form>
 </div>
