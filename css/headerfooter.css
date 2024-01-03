@@ -5,6 +5,10 @@
     text-decoration:none;
 }
 
+input:focus{
+    outline: none;
+}
+
 body{
     background:#EFEFEF;
 }
@@ -48,10 +52,38 @@ footer{
     position: fixed;
     width: 100%;
     text-align: center;
-    height:20%;
+    height:15%;
     color:#76ADCA;
 }
 
 footer p{
-    line-height:160px;
+    line-height:130px;
+}
+
+.headerPacientes{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:red;
+}
+
+.btn-voltar{
+    margin:10px;
+    background:transparent;
+    border:solid #00629B 1.5px;
+    border-radius:10px;
+    color:#00629B;
+    padding:10px 15px 10px 15px;
+    width:100px;
+}
+
+.btn-salvar{
+    margin:10px;
+    background:#00629B;
+    border:solid #00629B 1.5px;
+    border-radius:10px;
+    color:white;
+    padding:10px 15px 10px 15px;
+    width:100px;
 }

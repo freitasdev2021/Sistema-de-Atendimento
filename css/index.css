@@ -19,6 +19,7 @@
     color:gray;
     margin:10px;
     border-radius:10px;
+    box-shadow:0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 #pagination ul{
@@ -76,10 +77,6 @@
     border:solid white;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-}
-
-#pesquisa input:focus{
-    outline: none;
 }
 
 #pesquisa i{

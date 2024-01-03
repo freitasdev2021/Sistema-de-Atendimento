@@ -19,7 +19,7 @@ include"Configs/Includes/header.php";
                 <td>Ellen Camila Klen Sales</td>
                 <td>10/08/2001</td>
                 <td>659.295.950-97</td>
-                <td><a href="pacientes.php" class="btn-prosseguir">Prosseguir</a></td>
+                <td><a href="paciente.php" class="btn-prosseguir">Prosseguir</a></td>
             </tr>
         </tbody>
     </table>
