@@ -1,0 +1,10 @@
+.formPacientes{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+}
+
+.formPacientes form{
+    width:80%;
+}

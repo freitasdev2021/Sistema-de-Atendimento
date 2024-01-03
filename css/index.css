@@ -1,0 +1,113 @@
+.table-sitcon{
+    width:98%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:10px;
+}
+
+.table-sitcon table thead{
+    background:#00629B;
+    font-size:1.3em;
+}
+
+#pagination{
+    display:flex;
+    flex-direction:row;
+    background:white;
+    padding:10px;
+    color:gray;
+    margin:10px;
+    border-radius:10px;
+}
+
+#pagination ul{
+    display:flex;
+    flex-direction:row;
+}
+
+#pagination ul li{
+    margin:10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:15px
+}
+
+.table-sitcon table tbody{
+    font-size:1.1em;
+    font-family:Arial, Helvetica, sans-serif;
+    background:white;
+}
+
+.table-sitcon table tbody tr td{
+    padding:15px;
+}
+
+.table-sitcon table tbody tr td:nth-child(1){
+    border-bottom-left-radius: 10px;
+}
+
+.table-sitcon table tbody tr td:nth-child(4){
+    border-bottom-right-radius: 10px;
+}
+
+.table-sitcon table thead tr th{
+    padding:20px;
+    color:white;
+}
+
+.table-sitcon table thead tr th:nth-child(1){
+    border-top-left-radius: 10px;
+}
+
+.table-sitcon table thead tr th:nth-child(4){
+    border-top-right-radius: 10px;
+}
+
+#pesquisa{
+    width:79.5%;
+    padding:25px;
+}
+
+#pesquisa input{
+    float:left;
+    padding:14.5px;
+    width:400px;
+    background:white;
+    border:solid white;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#pesquisa input:focus{
+    outline: none;
+}
+
+#pesquisa i{
+    float:left;
+    padding:10px;
+    background:white;
+    border:solid white;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color:gray;
+    font-size:1.5em;
+    margin-right:-12px;
+    padding-left:10px;
+}
+
+.btn-prosseguir{
+    padding:10px;
+    background-color:#FF8200;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.1em;
+}
+
+.table-sitcon table{
+    width:80%;
+    margin:0px;
+    border-spacing:0px;
+    text-align:center;
+}
