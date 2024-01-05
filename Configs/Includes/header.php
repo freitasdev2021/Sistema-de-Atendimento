@@ -1,3 +1,7 @@
+<?php
+require"./Configs/Database/db.php";
+require"./Configs/Class/class_sitcon.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

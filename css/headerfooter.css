@@ -11,6 +11,8 @@ input:focus{
 
 body{
     background:#EFEFEF;
+    overflow:scroll;
+    height:1000px;
 }
 
 header{
