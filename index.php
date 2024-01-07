@@ -4,14 +4,11 @@ require"Configs/Class/class_pacientes.php";
 // for($i=0;$i<1000;$i++){
 //     mysqli_query(Database::DB(),"insert into pacientes (nome, dataNasc, CPF, status) values ('PACIENTE_$i','2000-08-10', 21029829309, 'ativo')");
 // }
-if(!isset($_GET['page'])){
-header("location:index.php?page=1");
-}
 ?>
 <div class="table-sitcon">
-    <span id="pesquisa">
-        <i class="fa fa-search"></i><input type="search" name="pesquisar" placeholder="Pesquisar">
-    </span>
+    <form id="pesquisa" action="index.php" method="POST">
+        <i class="fa fa-search"></i><input type="search" name="pesquisar" value="<?=(isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' )?>" placeholder="Pesquisar">
+    </form>
     <table>
         <thead class="font-label">
             <tr>
@@ -23,10 +20,10 @@ header("location:index.php?page=1");
         </thead>
         <tbody>
             <?php
-            echo Pacientes::getPacientes()['debug'];
-            $QuantidadeItens = Pacientes::getPacientes()['quantidadeItens'];
+            //echo Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['debug'];
+            $QuantidadeItens = Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['quantidadeItens'];
             $linksPaginaveis = ceil($QuantidadeItens/10);
-            foreach(Pacientes::getPacientes()['rows'] as $p){
+            foreach(Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['rows'] as $p){
             ?>
             <tr>
                 <td><?=$p['nome']?></td>
@@ -43,12 +40,17 @@ header("location:index.php?page=1");
          <ul>
             <li id="back" style="font-size:1.1em"><a href='index.php?page=1' class='linkUnselected'><</a></li>
             <?php
-            $primeiraPagina = max($_GET['page'] - 3,1);
-            $ultimaPagina = min($QuantidadeItens,$_GET['page'] + 3);
+            if(!isset($_GET['page'])){
+                $page = 1;
+            }else{
+                $page = $_GET['page'];
+            }
+            $primeiraPagina = max($page - 3,1);
+            $ultimaPagina = min($QuantidadeItens,$page + 3);
             
             for($i=$primeiraPagina;$i<=$ultimaPagina;$i++){
                 $active = "class=\"linkUnselected\"";
-                if($_GET['page'] == $i){
+                if($page == $i){
                     $active = "class=\"linkSelected\"";
                 }
                 if($i <= $linksPaginaveis){
