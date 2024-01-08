@@ -113,6 +113,10 @@
     box-shadow:1px 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
+.error-input{
+    color:red;
+}
+
 .list-items{
     margin-top:15px;
     border-radius:8px;
@@ -128,6 +132,10 @@
     display:flex;
     width:100%;
     float:right;
+}
+
+.footerPaciente button{
+    cursor:pointer;   
 }
 
 .list-items .item{

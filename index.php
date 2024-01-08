@@ -6,8 +6,8 @@ require"Configs/Class/class_pacientes.php";
 // }
 ?>
 <div class="table-sitcon">
-    <form id="pesquisa" action="index.php" method="POST">
-        <i class="fa fa-search"></i><input type="search" name="pesquisar" value="<?=(isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' )?>" placeholder="Pesquisar">
+    <form id="pesquisa" action="index.php" method="GET">
+        <i class="fa fa-search"></i><input type="search" name="pesquisar" value="<?=(isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '' )?>" placeholder="Pesquisar">
     </form>
     <table>
         <thead class="font-label">
@@ -20,10 +20,10 @@ require"Configs/Class/class_pacientes.php";
         </thead>
         <tbody>
             <?php
-            //echo Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['debug'];
-            $QuantidadeItens = Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['quantidadeItens'];
+            //echo Pacientes::getPacientes((isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '' ))['debug'];
+            $QuantidadeItens = Pacientes::getPacientes((isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '' ))['quantidadeItens'];
             $linksPaginaveis = ceil($QuantidadeItens/10);
-            foreach(Pacientes::getPacientes((isset($_POST['pesquisar']) ? $_POST['pesquisar'] : '' ))['rows'] as $p){
+            foreach(Pacientes::getPacientes((isset($_GET['pesquisar']) ? $_GET['pesquisar'] : '' ))['rows'] as $p){
             ?>
             <tr>
                 <td><?=$p['nome']?></td>
@@ -38,7 +38,7 @@ require"Configs/Class/class_pacientes.php";
     </table>
     <span id="pagination">
          <ul>
-            <li id="back" style="font-size:1.1em"><a href='index.php?page=1' class='linkUnselected'><</a></li>
+            <li id="back" style="font-size:1.1em"><a href='index.php<?=(isset($_GET['pesquisar']) ? '?pesquisar='.$_GET['pesquisar']."&page=1" : '?page=1' )?>' class='linkUnselected'><</a></li>
             <?php
             if(!isset($_GET['page'])){
                 $page = 1;
@@ -54,11 +54,13 @@ require"Configs/Class/class_pacientes.php";
                     $active = "class=\"linkSelected\"";
                 }
                 if($i <= $linksPaginaveis){
-                    echo "<li><a href='index.php?page=$i' $active >$i</a></li>";  
+                ?>
+                    <li><a href='index.php<?=(isset($_GET['pesquisar']) ? '?pesquisar='.$_GET['pesquisar'].'&page='.$i : '?page='.$i )?>' <?=$active?>><?=$i?></a></li>
+                <?php 
                 }
             }
             ?>
-            <li id="next" style="font-size:1.1em"><a href='index.php?page=<?=$linksPaginaveis?>' class='linkUnselected'>></a></li>
+            <li id="next" style="font-size:1.1em"><a href='index.php<?=(isset($_GET['pesquisar']) ? '?pesquisar='.$_GET['pesquisar'].'&page='.$linksPaginaveis : '?page='.$linksPaginaveis )?>' class='linkUnselected'>></a></li>
         </ul>
     </span>
 </div>

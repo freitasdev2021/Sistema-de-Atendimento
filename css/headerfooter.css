@@ -15,6 +15,10 @@ body{
     height:1000px;
 }
 
+.table-sitcon tbody tr:nth-child(even), .table-sitcon-solicitacoes tbody tr:nth-child(even) {
+    background-color: #e9f7ff;
+}
+
 header{
     width:100%;
     display:flex;
@@ -41,6 +45,18 @@ header nav button{
     color:white;
     padding:10px 15px 10px 15px;
     width:250px;
+    cursor:pointer;
+}
+
+.pageSelected{
+    margin:10px;
+    background:white;
+    border:solid white 1.5px;
+    border-radius:10px;
+    color:black;
+    padding:10px 15px 10px 15px;
+    width:250px;
+    cursor:pointer;
 }
 
 .font-label{

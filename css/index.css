@@ -1,4 +1,4 @@
-.table-sitcon{
+.table-sitcon, .table-sitcon-solicitacoes{
     width:98%;
     display:flex;
     flex-direction:column;
@@ -6,7 +6,7 @@
     margin:10px;
 }
 
-.table-sitcon table thead{
+.table-sitcon table thead, .table-sitcon-solicitacoes table thead{
     background:#00629B;
     font-size:1.3em;
 }
@@ -45,13 +45,13 @@
     font-size:15px
 }
 
-.table-sitcon table tbody{
+.table-sitcon table tbody, .table-sitcon-solicitacoes table tbody{
     font-size:1.1em;
     font-family:Arial, Helvetica, sans-serif;
     background:white;
 }
 
-.table-sitcon table tbody tr td{
+.table-sitcon table tbody tr td, .table-sitcon-solicitacoes table tbody tr td{
     padding:15px;
 }
 
@@ -63,7 +63,15 @@
     border-bottom-right-radius: 10px;
 }
 
-.table-sitcon table thead tr th{
+.table-sitcon table tbody tr td:nth-child(1){
+    border-bottom-left-radius: 10px;
+}
+
+.table-sitcon-solicitacoes table tbody tr td:nth-child(5){
+    border-bottom-right-radius: 10px;
+}
+
+.table-sitcon table thead tr th, .table-sitcon-solicitacoes table thead tr th{
     padding:20px;
     color:white;
 }
@@ -73,6 +81,14 @@
 }
 
 .table-sitcon table thead tr th:nth-child(4){
+    border-top-right-radius: 10px;
+}
+
+.table-sitcon-solicitacoes table thead tr th:nth-child(1){
+    border-top-left-radius: 10px;
+}
+
+.table-sitcon-solicitacoes table thead tr th:nth-child(5){
     border-top-right-radius: 10px;
 }
 
@@ -115,7 +131,7 @@
     font-size:1.1em;
 }
 
-.table-sitcon table{
+.table-sitcon table,.table-sitcon-solicitacoes table{
     width:80%;
     margin:0px;
     border-spacing:0px;
