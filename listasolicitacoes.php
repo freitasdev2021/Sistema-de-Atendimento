@@ -26,7 +26,7 @@ require"Configs/Class/class_solicitacoes.php";
             <tr>
                 <td><?=$p['paciente']?></td>
                 <td><?=Sitcon::cpfCnpj($p['CPF'],'###.###.###-###')?></td>
-                <td><?=($p['tipo_id'] == 2) ? 'Exames Laboratoriais' : 'Consulta' ?></td>
+                <td><?=$p['tipo']?></td>
                 <td><?=($p['tipo_id'] == 2) ? implode(",",json_decode($p['Procedimentos'],true)) : $p['Procedimentos'] ?></td>
                 <td><?=Sitcon::data($p['data']." ".$p['hora'],'d/m/Y - H:i')?></td>
             </tr>

@@ -17,7 +17,7 @@ require"./Configs/Class/class_sitcon.php";
 <main>
     <header>
         <nav>
-            <button class="btn-sitcon font-label <?=(basename($_SERVER['PHP_SELF']) == "index.php") ? 'pageSelected' : ''?>" onclick="window.location.href='index.php'">Solicitações Clinicas</button>
+            <button class="btn-sitcon font-label <?=(basename($_SERVER['PHP_SELF']) == "index.php" || basename($_SERVER['PHP_SELF']) == "paciente.php" ) ? 'pageSelected' : ''?>" onclick="window.location.href='index.php'">Solicitações Clinicas</button>
             <button class="btn-sitcon font-label <?=(basename($_SERVER['PHP_SELF']) == "listasolicitacoes.php") ? 'pageSelected' : ''?>" onclick="window.location.href='listasolicitacoes.php'">Listagem de Solicitações</button>
         </nav>
     </header>
